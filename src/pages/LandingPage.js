@@ -135,7 +135,7 @@ export default function LandingPage() {
                                 className="w-6"
                             />
                             <div className="font-['Lato'] leading-[24px] text-[#5a4f5a]">
-                                +91 99999 77777
+                                +91 9105885150
                             </div>
                         </div>
                     </div>
