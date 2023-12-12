@@ -2,6 +2,7 @@ import React from 'react';
 
 import LandingPage from './pages/LandingPage';
 import {Route,Routes} from "react-router-dom"
+import MyComponent from './components/MyComponent';
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <div className="">
          
          <Routes>
-         <Route path="/" element={<LandingPage/>}></Route>
+         <Route path="/" element={<MyComponent/>}></Route>
          </Routes>
         
     </div>
