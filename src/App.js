@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LandingPage from './pages/LandingPage';
+import SurveyPage from './pages/SurveyPage';
 import {Route,Routes} from "react-router-dom"
 
 
@@ -11,6 +12,7 @@ function App() {
          
          <Routes>
          <Route path="/" element={<LandingPage/>}></Route>
+         <Route path="/survey-with-us" element={<SurveyPage/>}></Route>
          </Routes>
         
     </div>

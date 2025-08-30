@@ -1,0 +1,42 @@
+import React, { useEffect } from 'react';
+
+const SurveyPage = () => {
+  useEffect(() => {
+    // Load Tally.so widget script
+    const script = document.createElement('script');
+    script.src = 'https://tally.so/widgets/embed.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+
+  return (
+    <div style={{ margin: 0, height: '100vh', overflow: 'hidden' }}>
+      <iframe 
+        data-tally-src="https://tally.so/r/nGZoAz?formEventsForwarding=1" 
+        width="100%" 
+        height="100%" 
+        frameBorder="0" 
+        marginHeight="0" 
+        marginWidth="0" 
+        title="eazyPregnancy"
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+          border: 0
+        }}
+      />
+    </div>
+  );
+};
+
+export default SurveyPage;
