@@ -13,15 +13,15 @@ import {Link} from "react-router-dom";
 export default function LandingPage() {
     return (
         <div className="w-[100vw] bg-white overflow-x-hidden">
-            <div className=" w-full relative mb-14">
+            <header className=" w-full relative mb-14">
                 
-                <div id="Navbar" className="w-full  bg-white  flex h-[82px] lg:h-[104px]  flex-row items-center gap-1 py-[8px] px-[24px] lg:px-[60px]" >
+                <nav id="Navbar" className="w-full  bg-white  flex h-[82px] lg:h-[104px]  flex-row items-center justify-between py-[8px] px-[24px] lg:px-[60px]" >
                    <Link to="/">
                    
                    <div className="flex gap-1 items-center">
                     <img
                         src={logo}
-                        alt="LogoIcon"
+                        alt="eazyPregnancy Logo - Pregnancy Care Platform"
                         id="LogoIcon"
                         className="w-[44px]"
                     />
@@ -33,15 +33,15 @@ export default function LandingPage() {
                     </div>
                     </div>
                     </Link>
-                </div>
+                </nav>
                 
-                <div className="w-full flex flex-col  lg:flex-row   mt-[40px] lg:mt-[0]  gap-4 justify-between items-center  lg:pr-0">
+                <main className="w-full flex flex-col  lg:flex-row   mt-[40px] lg:mt-[0]  gap-4 justify-between items-center  lg:pr-0">
                     <div className="relative  flex flex-col   px-[24px] lg:px-[60px] lg:pr-0 lg:pb-[10px]  lg:gap-[40px]  lg:max-w-[55%]">
                         <div className="relative flex flex-col gap-2 lg:gap-10 w-full ">
                             <div className=" flex flex-col  w-full">
-                                <div className="text-[#312a31] font-['Lato']  text-[24px]  lg:text-[48px] lg:leading-[72px]  w-full   ">
+                                <h1 className="text-[#312a31] font-['Lato']  text-[24px]  lg:text-[48px] lg:leading-[72px]  w-full   ">
                                     One-stop solution for all your
-                                </div>
+                                </h1>
                                 <div className="flex flex-row w-full leading-[60px] lg:leading-[132px] pb-4 lg:pb-0  text-[40px] lg:text-[90px]">
                                     <div className="  font-['Lato'] font-semibold text-[#312a31]  ">
                                         Pregnancy
@@ -54,35 +54,44 @@ export default function LandingPage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="font-['Lato'] text-justify text-lg leading-[24px]  text-[#5a4f5a] ">
+                            <p className="font-['Lato'] text-justify text-lg leading-[24px]  text-[#5a4f5a] ">
                                 Preparing for the journey of a lifetime! Our Pregnancy Support website
                                 is coming soon to guide you through every step of your beautiful
                                 pregnancy. Stay tuned for expert advice, helpful resources, and a
                                 supportive community to make your pregnancy a memorable and joyous
                                 experience.
-                            </div>
+                            </p>
                         </div>
-                        <div className="  text-[24px] lg:text-4xl font-['Lato'] mt-3 lg:mt-10  font-bold  leading-[24px] text-[#eb61a2]">
+                        <h2 className="  text-[24px] lg:text-4xl font-['Lato'] mt-3 lg:mt-10  font-bold  leading-[24px] text-[#eb61a2]">
                             We are coming soon
+                        </h2>
+                        
+                        <div className="mt-6 lg:mt-8">
+                            <Link 
+                                to="/survey-with-us" 
+                                className="bg-[#eb61a2] text-white px-6 py-3 rounded-lg font-['Lato'] font-semibold text-lg hover:bg-[#d54a8a] transition-colors duration-200 inline-block"
+                            >
+                                Make us better
+                            </Link>
                         </div>
                     </div>
                     <div className="w-full bg-white pl-[60px] lg:pl-0 pr-0 flex justify-end">
 
                         <img
                             src={landingPage}
-                            alt="LandingPage"
+                            alt="Pregnancy care illustration - eazyPregnancy platform"
                             className="relative r-0"
                         />
 
 
                     </div>
-                </div>
-                <div className="bg-white w-full mt-10 px-[60px] pt-[100px] mb-10  ">
+                </main>
+                <footer className="bg-white w-full mt-10 px-[60px] pt-[100px] mb-10  ">
                     <div className="flex flex-col text-center justify-center  lg:flex-row  lg:justify-between w-full ">
                         <div className="w-full justify-center lg:justify-start flex flex-row  gap-3">
                             <img
                                 src={logosvg}
-                                alt="LogoIcon1"
+                                alt="eazyPregnancy Logo - Pregnancy Support Platform"
                                 id="LogoIcon1"
                                 className=" w-[64px] lg:w-16"
                             />
@@ -95,7 +104,7 @@ export default function LandingPage() {
                        <Link to="https://www.facebook.com/profile.php?id=61552230947103">
                        <img
                                 src={facebook}
-                                alt="facebook"
+                                alt="Follow eazyPregnancy on Facebook"
                                 id="facebook"
                                 className="w-8"
                             />
@@ -104,7 +113,7 @@ export default function LandingPage() {
                       <Link to="https://www.linkedin.com/company/eazypregnancy/">       
                         <img
                                 src={linkedin}
-                                alt="linkedin"
+                                alt="Connect with eazyPregnancy on LinkedIn"
                                 id="linkedin"
                                 className="w-8"
                             />
@@ -113,7 +122,7 @@ export default function LandingPage() {
                         <Link to="https://www.instagram.com/eazypregnancy/">
                         <img
                                 src={insta}
-                                alt="insta"
+                                alt="Follow eazyPregnancy on Instagram"
                                 id="insta"
                                 className="w-8"
                             />
@@ -130,7 +139,7 @@ export default function LandingPage() {
                         <div className="w-full flex flex-row justify-center  gap-2  lg:justify-start">
                             <img
                                 src={contact}
-                                alt="Contact"
+                                alt="Contact eazyPregnancy phone icon"
                                 id="Contact"
                                 className="w-6"
                             />
@@ -139,8 +148,8 @@ export default function LandingPage() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </footer>
+            </header>
 
             {/* section2 */}
 
