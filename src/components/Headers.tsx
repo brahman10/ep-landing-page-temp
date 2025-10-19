@@ -98,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           >
             Launching in
           </p>
-          <div className="flex items-center justify-center gap-[clamp(8px,1vw,12px)]">
+          <div className="flex items-top justify-center gap-[clamp(8px,1vw,12px)]">
             {/* Days */}
             <div className="flex flex-col items-center gap-[clamp(6px,0.8vw,8px)]">
               <div 
@@ -117,7 +117,8 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   className="font-semibold text-[clamp(18px,2.2vw,26.849px)]"
                   style={{ 
                     fontFamily: 'Inter, sans-serif',
-                    color: '#6D597A'
+                    color: '#6D597A',
+                    fontSize: 'clamp(14px,2.2vw,20px)'
                   }}
                 >
                   {formatNumber(timeLeft.days)}
@@ -137,12 +138,13 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             </div>
 
             {/* Separator 1 */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-top justify-center">
               <p 
                 className="font-semibold text-[clamp(16px,2vw,20px)]"
                 style={{ 
                   fontFamily: 'Inter, sans-serif',
-                  color: '#6D597A'
+                  color: '#6D597A',
+                  paddingTop: '4px'
                 }}
               >
                 :
@@ -167,7 +169,8 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   className="font-semibold text-[clamp(18px,2.2vw,26.849px)]"
                   style={{ 
                     fontFamily: 'Inter, sans-serif',
-                    color: '#6D597A'
+                    color: '#6D597A',
+                    fontSize: 'clamp(14px,2.2vw,20px)'
                   }}
                 >
                   {formatNumber(timeLeft.hours)}
@@ -187,12 +190,13 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             </div>
 
             {/* Separator 2 */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-top justify-center">
               <p 
                 className="font-semibold text-[clamp(16px,2vw,20px)]"
                 style={{ 
                   fontFamily: 'Inter, sans-serif',
-                  color: '#6D597A'
+                  color: '#6D597A',
+                  paddingTop: '4px'
                 }}
               >
                 :
@@ -217,7 +221,8 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   className="font-semibold text-[clamp(18px,2.2vw,26.849px)]"
                   style={{ 
                     fontFamily: 'Inter, sans-serif',
-                    color: '#6D597A'
+                    color: '#6D597A',
+                    fontSize: 'clamp(14px,2.2vw,20px)'
                   }}
                 >
                   {formatNumber(timeLeft.minutes)}
@@ -237,12 +242,13 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             </div>
 
             {/* Separator 3 */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-top justify-center">
               <p 
                 className="font-semibold text-[clamp(16px,2vw,20px)]"
                 style={{ 
                   fontFamily: 'Inter, sans-serif',
-                  color: '#6D597A'
+                  color: '#6D597A',
+                  paddingTop: '4px'
                 }}
               >
                 :
@@ -267,7 +273,8 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   className="font-semibold text-[clamp(18px,2.2vw,26.849px)]"
                   style={{ 
                     fontFamily: 'Inter, sans-serif',
-                    color: '#6D597A'
+                    color: '#6D597A',
+                    fontSize: 'clamp(14px,2.2vw,20px)'
                   }}
                 >
                   {formatNumber(timeLeft.seconds)}

@@ -617,7 +617,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
                       fontFamily: 'var(--font-geist)'
                     }}
                   >
-                    +48
+                    48
                   </p>
                 </div>
               </div>
