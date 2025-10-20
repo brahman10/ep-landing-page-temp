@@ -16,6 +16,12 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
   const [joinedCount, setJoinedCount] = useState(1500);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Comprehensive country codes data
@@ -229,6 +235,36 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
     { code: '+998', country: 'Uzbekistan', flag: '🇺🇿' }
   ];
 
+  // Format number with leading zero
+  const formatNumber = (num: number): string => {
+    return num.toString().padStart(2, '0');
+  };
+
+  // Countdown timer logic
+  useEffect(() => {
+    // Set target date to October 29, 2025 00:00 AM IST
+    const targetDate = new Date('2025-10-29T00:00:00+05:30');
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
+
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   // Filter countries based on search query
   const filteredCountries = countryCodes.filter(country =>
     country.country.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -375,7 +411,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
         font-size: clamp(24px, 5vw, 38px) !important;
       }
       .waitlist-description {
-        font-size: clamp(14px, 2.5vw, 20px) !important;
+        font-size: clamp(12px, 2.5vw, 20px) !important;
       }
       .waitlist-form-container {
         padding: clamp(20px, 4vh, 40px) !important;
@@ -403,8 +439,8 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       max-width: 390px !important;
       height: auto !important;
       min-height: auto !important;
-      padding: 32px 24px !important;
-      gap: 24px !important;
+      padding: 16px 16px !important;
+      gap: 16px !important;
       margin: 16px !important;
       margin-left: 0 !important;
       position: fixed !important;
@@ -418,17 +454,20 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2) !important;
     }
     .waitlist-title {
-      font-size: 24px !important;
+      font-size: 16px !important;
       line-height: 1.3 !important;
     }
+    .waitlist-title span {
+      font-size: 20px !important;
+    }
     .waitlist-title br {
-      display: none !important;
+      display: block !important;
     }
     .waitlist-title .mobile-space {
       display: inline !important;
     }
     .waitlist-description {
-      font-size: 14px !important;
+      font-size: 12px !important;
       line-height: 1.5 !important;
       padding: 0 !important;
     }
@@ -518,6 +557,171 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       >
         {!isSuccess ? (
           <>
+
+          {/* Mobile Countdown Timer - Only visible on mobile */}
+          <div className="block md:hidden">
+              <div className="flex items-center gap-2">
+                <p 
+                  className="font-semibold text-base tracking-[0.4833px]"
+                  style={{ 
+                    fontFamily: 'Inter, sans-serif',
+                    color: '#6D597A'
+                  }}
+                >
+                  Launching in
+                </p>
+                
+                {/* Mobile Timer */}
+                <div className="flex items-center gap-1.5">
+                  {/* Days */}
+                  <div className="flex flex-col items-center gap-1">
+                    <div 
+                      className="flex items-center justify-center rounded"
+                      style={{
+                        width: '32px',
+                        height: '32px',
+                        background: 'rgba(255, 255, 255, 0.2)',
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+                      }}
+                    >
+                      <p 
+                        className="font-semibold text-base"
+                        style={{ 
+                          fontFamily: 'Inter, sans-serif',
+                          color: '#6D597A'
+                        }}
+                      >
+                        {formatNumber(timeLeft.days)}
+                      </p>
+                    </div>
+                    <p 
+                      className="font-normal text-xs"
+                      style={{ 
+                        fontFamily: 'Inter, sans-serif',
+                        color: '#6D597A'
+                      }}
+                    >
+                      Days
+                    </p>
+                  </div>
+
+                  <p className="font-semibold text-base" style={{ color: '#6D597A', marginTop: '-16px' }}>:</p>
+
+                  {/* Hours */}
+                  <div className="flex flex-col items-center gap-1">
+                    <div 
+                      className="flex items-center justify-center rounded"
+                      style={{
+                        width: '32px',
+                        height: '32px',
+                        background: 'rgba(255, 255, 255, 0.2)',
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+                      }}
+                    >
+                      <p 
+                        className="font-semibold text-base"
+                        style={{ 
+                          fontFamily: 'Inter, sans-serif',
+                          color: '#6D597A'
+                        }}
+                      >
+                        {formatNumber(timeLeft.hours)}
+                      </p>
+                    </div>
+                    <p 
+                      className="font-normal text-xs"
+                      style={{ 
+                        fontFamily: 'Inter, sans-serif',
+                        color: '#6D597A'
+                      }}
+                    >
+                      Hours
+                    </p>
+                  </div>
+
+                  <p className="font-semibold text-base" style={{ color: '#6D597A', marginTop: '-16px' }}>:</p>
+
+                  {/* Minutes */}
+                  <div className="flex flex-col items-center gap-1">
+                    <div 
+                      className="flex items-center justify-center rounded"
+                      style={{
+                        width: '32px',
+                        height: '32px',
+                        background: 'rgba(255, 255, 255, 0.2)',
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+                      }}
+                    >
+                      <p 
+                        className="font-semibold text-base"
+                        style={{ 
+                          fontFamily: 'Inter, sans-serif',
+                          color: '#6D597A'
+                        }}
+                      >
+                        {formatNumber(timeLeft.minutes)}
+                      </p>
+                    </div>
+                    <p 
+                      className="font-normal text-xs"
+                      style={{ 
+                        fontFamily: 'Inter, sans-serif',
+                        color: '#6D597A'
+                      }}
+                    >
+                      Mins
+                    </p>
+                  </div>
+
+                  <p className="font-semibold text-base" style={{ color: '#6D597A', marginTop: '-16px' }}>:</p>
+
+                  {/* Seconds */}
+                  <div className="flex flex-col items-center gap-1">
+                    <div 
+                      className="flex items-center justify-center rounded"
+                      style={{
+                        width: '32px',
+                        height: '32px',
+                        background: 'rgba(255, 255, 255, 0.2)',
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+                      }}
+                    >
+                      <p 
+                        className="font-semibold text-base"
+                        style={{ 
+                          fontFamily: 'Inter, sans-serif',
+                          color: '#6D597A'
+                        }}
+                      >
+                        {formatNumber(timeLeft.seconds)}
+                      </p>
+                    </div>
+                    <p 
+                      className="font-normal text-xs"
+                      style={{ 
+                        fontFamily: 'Inter, sans-serif',
+                        color: '#6D597A'
+                      }}
+                    >
+                      Sec
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             {/* Title Section */}
             <div className="flex flex-col items-center gap-3 text-center w-full">
               <div 
@@ -526,7 +730,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
                   color: '#000',
                   textAlign: 'center',
                   fontFamily: 'var(--font-geist)',
-                  fontSize: '38px',
+                  fontSize: '30px',
                   fontStyle: 'normal',
                   fontWeight: '600',
                   lineHeight: 'normal',
@@ -534,7 +738,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
                 }}
               >
                 One Stop Solution for<span className="mobile-space"> </span><br/>
-                <span style={{ color: '#6d597a' }}>Pregnancy Care</span>
+                <span style={{ color: '#6d597a', fontSize: '38px' }}>Pregnancy Care</span>
               </div>
               <p 
                 className="waitlist-description w-full"
@@ -549,7 +753,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
                   padding: '0px 20px',
                 }}
               >
-                Everything you need for a healthy, happy pregnancy journey - all in one place. Join thousands of expecting mothers waiting for expert-backed guidance, personalized care, and 24/7 support
+                Because every pregnancy deserves care, comfort, and confidence. Get expert advice, personalized plans, and 24/7 support—all in one trusted space for expecting moms.
               </p>
             </div>
 
@@ -559,19 +763,19 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
               style={{
                 display: 'flex',
                 width: '600px',
-                height: '230px',
-                padding: '40px',
+                minHeight: '200px',
+                padding: '30px',
                 marginBottom: '0px',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
-                gap: '24px',
+                gap: '12px',
                 borderRadius: '24px',
                 background: '#FFF',
                 boxShadow: '0 1px 13px 0 rgba(0, 0, 0, 0.25)'
               }}
             >
               {/* Avatar Group */}
-              <div className="flex items-center" style={{ marginTop: '-20px' }}>
+              <div className="flex items-center">
                 <div 
                   className="waitlist-avatar border-2 border-white rounded-full w-[32px] h-[32px] relative -mr-2"
                 >
@@ -628,13 +832,13 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
                   className="font-semibold text-base"
                   style={{ fontFamily: 'var(--font-geist)' }}
                 >
-                  Join the waitlist
+                  Don&apos;t miss out!
                 </p>
                 <p 
                   className="font-normal text-sm"
                   style={{ fontFamily: 'var(--font-geist)', color: 'rgba(0,0,0,0.7)' }}
                 >
-                  Drop your number to get notified!
+                  Join the waitlist and get notified the moment we go live.
                 </p>
               </div>
 
@@ -767,7 +971,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
                     gap: '4px',
                     borderRadius: '8.797px',
                     background: isLoading ? '#9CA3AF' : 'var(--Brand-color, #6D597A)',
-                    boxShadow: isLoading ? 'none' : '0 2px 8px rgba(109, 89, 122, 0.3)'
+                    boxShadow: isLoading ? 'none' : '0 2px 8px rgba(109, 89, 122, 0.3)',
                   }}
                 >
                   <div className="flex gap-2 items-center justify-center px-0.5 py-0">
@@ -790,18 +994,6 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
                   </div>
                 </div>
               </div>
-
-              {/* Error Message */}
-              {/* {error && (
-                <div className="w-full">
-                  <p 
-                    className="text-red-500 text-sm text-center"
-                    style={{ fontFamily: 'var(--font-geist)' }}
-                  >
-                    {error}
-                  </p>
-                </div>
-              )} */}
             </div>
           </>
         ) : (

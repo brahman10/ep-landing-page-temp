@@ -67,12 +67,11 @@ const IntroPage: React.FC = () => {
   return (
     <>
       <style>{`
-
       
         @media (max-width: 768px) {
           .intro-page-container {
             height: 100vh !important;
-            overflow-y: auto !important;
+            overflow-y: hidden !important;
             overflow-x: hidden !important;
           }
           .intro-page-main-content {
@@ -214,7 +213,7 @@ const IntroPage: React.FC = () => {
         
         {/* Main Content Container */}
         <div className="intro-page-main-content relative w-full"
-          style = {{ marginLeft: '120px' }}
+          
         >
           {/* Content Section with Blur Effect - Desktop Only */}
           <div 
@@ -224,6 +223,7 @@ const IntroPage: React.FC = () => {
               height: '1399px',
               filter: 'blur(50px)',
               WebkitFilter: 'blur(5px)',
+              marginLeft: '120px' 
             }}
           >
             {/* Specialities Section */}
@@ -441,7 +441,7 @@ const IntroPage: React.FC = () => {
             className="intro-page-waitlist-wrapper absolute top-0 w-full h-full pointer-events-none"
             style={{
               marginTop: '-470px',
-              marginLeft: '-125px',
+
             }}
           >
             <div className="pointer-events-auto">
