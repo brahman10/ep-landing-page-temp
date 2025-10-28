@@ -8,32 +8,32 @@ const IntroPage: React.FC = () => {
   // Speciality data
   const specialities = [
     {
-      imageUrl: "https://www.figma.com/api/mcp/asset/8af13e0f-89b2-4f60-b5fa-3d55fb203a42",
+      imageUrl: "https://storage.googleapis.com/ep-prod-assets/doctorplaceholder.svg",
       title: "Gynaecologist",
       price: "Rs. 399/-"
     },
     {
-      imageUrl: "https://www.figma.com/api/mcp/asset/20462f66-f9c4-4dc6-a24d-4cae647e9a4e",
+      imageUrl: "https://storage.googleapis.com/ep-prod-assets/doctorplaceholder.svg",
       title: "Gynaecologist",
       price: "Rs. 399/-"
     },
     {
-      imageUrl: "https://www.figma.com/api/mcp/asset/34faf210-5dc4-4ebd-b92f-f69b78445233",
+      imageUrl: "https://storage.googleapis.com/ep-prod-assets/doctorplaceholder.svg",
       title: "Gynaecologist",
       price: "Rs. 399/-"
     },
     {
-      imageUrl: "https://www.figma.com/api/mcp/asset/02ea4b86-9e41-4b2c-be75-6f85aabac994",
+      imageUrl: "https://storage.googleapis.com/ep-prod-assets/doctorplaceholder.svg",
       title: "Gynaecologist",
       price: "Rs. 399/-"
     },
     {
-      imageUrl: "https://www.figma.com/api/mcp/asset/8af13e0f-89b2-4f60-b5fa-3d55fb203a42",
+      imageUrl: "https://storage.googleapis.com/ep-prod-assets/doctorplaceholder.svg",
       title: "Gynaecologist",
       price: "Rs. 399/-"
     },
     {
-        imageUrl: "https://www.figma.com/api/mcp/asset/8af13e0f-89b2-4f60-b5fa-3d55fb203a42",
+        imageUrl: "https://storage.googleapis.com/ep-prod-assets/doctorplaceholder.svg",
         title: "Gynaecologist",
         price: "Rs. 399/-"
       },
@@ -42,21 +42,21 @@ const IntroPage: React.FC = () => {
   // Blog data
   const blogPosts = [
     {
-      imageUrl: "https://www.figma.com/api/mcp/asset/9695b2fa-df28-45eb-a817-830deda8bc9d",
+      imageUrl: "https://storage.googleapis.com/ep-prod-assets/momplaceholder.png",
       date: "January 15, 2025 • 6 min read",
       title: "Essential nutrients and dietary guidelines for the critical first 12 weeks of pregnancy, including folic acid requirements and",
       description: "Essential nutrients and dietary guidelines for the critical first 12 weeks of pregnancy, including folic acid requirements and",
       author: "Dr. Sarah Mitchell, MD"
     },
     {
-      imageUrl: "https://www.figma.com/api/mcp/asset/b875eed4-185c-4b8e-a07d-434660dbf067",
+      imageUrl: "https://storage.googleapis.com/ep-prod-assets/momplaceholder.png",
       date: "January 15, 2025 • 6 min read",
       title: "Essential nutrients and dietary guidelines for the critical first 12 weeks of pregnancy, including folic acid requirements and",
       description: "Essential nutrients and dietary guidelines for the critical first 12 weeks of pregnancy, including folic acid requirements and",
       author: "Dr. Sarah Mitchell, MD"
     },
     {
-      imageUrl: "https://www.figma.com/api/mcp/asset/0648f883-dbe0-45a6-990e-6d802c4e4895",
+      imageUrl: "https://storage.googleapis.com/ep-prod-assets/momplaceholder.png",
       date: "January 15, 2025 • 6 min read",
       title: "Essential nutrients and dietary guidelines for the critical first 12 weeks of pregnancy, including folic acid requirements and",
       description: "Essential nutrients and dietary guidelines for the critical first 12 weeks of pregnancy, including folic acid requirements and",
@@ -204,12 +204,6 @@ const IntroPage: React.FC = () => {
         {/* Header Section */}
         <Header />
         
-        {/* Background Image */}
-        <img 
-          src="https://www.figma.com/api/mcp/asset/3f20e364-9a05-4b47-87d8-b83702d3ece5" 
-          alt="Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
         
         {/* Main Content Container */}
         <div className="intro-page-main-content relative w-full"
