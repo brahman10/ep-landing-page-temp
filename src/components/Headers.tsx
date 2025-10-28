@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
   useEffect(() => {
     // Set target date to October 29, 2025 00:00 AM IST
-    const targetDate = new Date('2025-10-29T00:00:00+05:30');
+    const targetDate = new Date('2025-11-05T00:00:00+05:30');
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     <div 
       className={`flex flex-col items-center justify-center px-4 py-3 relative ${className}`}
       style={{
-        backgroundImage: 'url("https://www.figma.com/api/mcp/asset/0713626d-708c-43f6-bca8-ab4802b96b7e")',
+        backgroundImage: 'url("https://storage.googleapis.com/ep-prod-assets/headerbg.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -65,10 +65,10 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             className="flex gap-[clamp(1px,0.1vw,1.382px)] h-[clamp(35px,4vw,47.81px)] items-center px-0 py-[0.138px] w-[clamp(35px,4vw,46.986px)]"
           >
             <div className="flex items-center justify-center">
-              <div className="flex-none scale-y-[-100%]">
+              <div className="flex-none">
                 <div className="h-[clamp(35px,4vw,47.534px)] w-[clamp(35px,4vw,46.986px)]">
                   <img 
-                    src="https://www.figma.com/api/mcp/asset/f1b029f7-080a-4124-adf9-aa1cbda04882" 
+                    src="https://storage.googleapis.com/ep-prod-assets/Logo.svg" 
                     alt="Logo" 
                     className="block w-full h-full"
                   />
@@ -301,10 +301,10 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         {/* Logo Section - Mobile */}
         <div className="flex items-center gap-2">
           <div className="flex items-center justify-center">
-            <div className="flex-none scale-y-[-100%]">
+            <div className="flex-none">
               <div className="h-[38px] w-[37px]">
                 <img 
-                  src="https://www.figma.com/api/mcp/asset/f1b029f7-080a-4124-adf9-aa1cbda04882" 
+                  src="https://storage.googleapis.com/ep-prod-assets/Logo.svg" 
                   alt="Logo" 
                   className="block w-full h-full"
                 />
