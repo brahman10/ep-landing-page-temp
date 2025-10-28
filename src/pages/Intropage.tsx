@@ -204,13 +204,6 @@ const IntroPage: React.FC = () => {
         {/* Header Section */}
         <Header />
         
-        {/* Background Image */}
-        <img 
-          src="https://www.figma.com/api/mcp/asset/3f20e364-9a05-4b47-87d8-b83702d3ece5" 
-          alt="Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
-        
         {/* Main Content Container */}
         <div className="intro-page-main-content relative w-full"
           
