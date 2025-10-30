@@ -1,11 +1,8 @@
 import React from "react"
 
-import logo from "../assets/Logo-Icon.png"
-import logosvg from "../assets/Logo-Icon.svg"
 import facebook from "../assets/facebook.png"
 import insta from "../assets/insta.png"
 import linkedin from "../assets/linkedin.png"
-import landingPage from "../assets/landingPage.svg"
 import contact from "../assets/contact.svg"
 import {Link} from "react-router-dom";
 
@@ -20,7 +17,7 @@ export default function LandingPage() {
                    
                    <div className="flex gap-1 items-center">
                     <img
-                        src={logo}
+                        src="https://storage.googleapis.com/ep-prod-assets/Logo.svg"
                         alt="eazyPregnancy Logo - Pregnancy Care Platform"
                         id="LogoIcon"
                         className="w-[44px]"
@@ -75,22 +72,12 @@ export default function LandingPage() {
                             </Link>
                         </div>
                     </div>
-                    <div className="w-full bg-white pl-[60px] lg:pl-0 pr-0 flex justify-end">
-
-                        <img
-                            src={landingPage}
-                            alt="Pregnancy care illustration - eazyPregnancy platform"
-                            className="relative r-0"
-                        />
-
-
-                    </div>
                 </main>
                 <footer className="bg-white w-full mt-10 px-[60px] pt-[100px] mb-10  ">
                     <div className="flex flex-col text-center justify-center  lg:flex-row  lg:justify-between w-full ">
                         <div className="w-full justify-center lg:justify-start flex flex-row  gap-3">
                             <img
-                                src={logosvg}
+                                src="https://storage.googleapis.com/ep-prod-assets/Logo.svg"
                                 alt="eazyPregnancy Logo - Pregnancy Support Platform"
                                 id="LogoIcon1"
                                 className=" w-[64px] lg:w-16"
