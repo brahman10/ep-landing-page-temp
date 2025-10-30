@@ -243,7 +243,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
   // Countdown timer logic
   useEffect(() => {
     // Set target date to October 29, 2025 00:00 AM IST
-    const targetDate = new Date('2025-10-29T00:00:00+05:30');
+    const targetDate = new Date('2025-11-05T00:00:00+05:30');
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
